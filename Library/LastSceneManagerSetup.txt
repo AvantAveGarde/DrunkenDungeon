@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ItemPickup/JaredTestScene.unity
+- path: Assets/Scenes/Level2YourName.unity
   isLoaded: 1
   isActive: 1
