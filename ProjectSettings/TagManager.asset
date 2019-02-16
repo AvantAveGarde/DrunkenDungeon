@@ -12,6 +12,7 @@ TagManager:
   - PlayerAttack
   - Enemy
   - LevelLoader
+  - FinalLoader
   layers:
   - Default
   - TransparentFX

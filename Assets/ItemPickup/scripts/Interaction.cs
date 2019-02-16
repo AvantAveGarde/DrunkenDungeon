@@ -50,6 +50,9 @@ public class Interaction : MonoBehaviour {
             case "LevelLoader":
                 SceneManager.LoadScene("Level2Master");
                 break;
+            case "FinalLoader":
+                SceneManager.LoadScene("FinalLevel");
+                break;
         }
         
     }
