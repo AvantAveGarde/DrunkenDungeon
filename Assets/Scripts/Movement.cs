@@ -24,10 +24,10 @@ public class Movement : MonoBehaviour {
         Vector3 velocity = Vector3.Normalize(transform.forward * movementY + transform.right * movementX);//new Vector3(movementX, 0, movementY);
         velocity.y = 0;
         Vector3 airResistance = rb.velocity;
-        if (movementX == 0 && movementY == 0&& System.Math.Abs(rb.velocity.y) < .001)
+        if (movementX == 0 && movementY == 0&& System.Math.Abs(rb.velocity.y) < .01f)
             airResistance *= 10;
             rb.AddForce(speed*velocity-airResistance);
-        if (Input.GetKeyDown(KeyCode.Space)&& System.Math.Abs(rb.velocity.y)<.001)
+        if (Input.GetKeyDown(KeyCode.Space)&& System.Math.Abs(rb.velocity.y)<.01f)
             rb.AddForce(new Vector3(0, 500, 0));
         CameraUpdate();
 	}

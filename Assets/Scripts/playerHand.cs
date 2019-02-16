@@ -17,7 +17,10 @@ public class playerHand : MonoBehaviour {
             foreach (RaycastHit hit in hits)
             {
                 Interaction i = hit.transform.gameObject.GetComponent<Interaction>();
-                i.DoSomething();
+                if (i != null)
+                {
+                    i.DoSomething();
+                }   
             }
         }
     }
