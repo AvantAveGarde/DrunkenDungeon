@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class Melee_AI : MonoBehaviour {
     [SerializeField] private GameObject weapon;
-    [SerializeField] private float attack_cd;
-    [SerializeField] private float attack_dist;
+    [SerializeField] private float attack_cd = 1.2f;
+    [SerializeField] private float attack_dist = 1.8f;
 
     private GameObject player;
     private Transform target;
