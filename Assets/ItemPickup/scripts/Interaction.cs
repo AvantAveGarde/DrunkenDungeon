@@ -53,7 +53,6 @@ public class Interaction : MonoBehaviour {
 
     private void SpewItems()
     {
-        Debug.Log("aaaahh fire!");
         for (int i = 0; i < storedCoins; i++)
         {
             float xVel = Random.value/5 - 1/5;
