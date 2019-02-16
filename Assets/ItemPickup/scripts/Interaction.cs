@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Interaction : MonoBehaviour {
 
     //track this object's tag
@@ -47,6 +47,9 @@ public class Interaction : MonoBehaviour {
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 SpewItems();
                 return;
+            case "LevelLoader":
+                SceneManager.LoadScene("Level2Master");
+                break;
         }
         
     }
