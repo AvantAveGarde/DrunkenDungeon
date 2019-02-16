@@ -9,8 +9,9 @@ public class Archer_AI : MonoBehaviour {
 	public Transform target;
 	private NavMeshAgent agent;
 	[SerializeField] private GameObject weapon;
-	[SerializeField] private float attack_dist;
-	private float cur_coold;
+	[SerializeField] public float attack_dist = 12f;
+	[SerializeField] public float attack_cooldown = 1f;
+	private float cur_cooldown;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,6 +20,7 @@ public class Archer_AI : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
 		agent = this.GetComponent<NavMeshAgent>();
+
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,10 @@ public class Archer_AI : MonoBehaviour {
 			else
 			{
 				agent.enabled = true;
+			}
+			if(cur_cooldown <= 0f)
+			{
+				cur_cooldown = attack_cooldown;
 			}
 		}
 	}
