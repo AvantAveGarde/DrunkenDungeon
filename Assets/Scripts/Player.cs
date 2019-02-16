@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
     // Use this for initialization
-    public Slider healthSlider;
-    List<string> inventory = new List<string>();
-    int health, maxHealth = 100;
-    bool dead;
+    public gameManager manager;
+    bool dead = false;
 	void Start ()
     {
-        health = maxHealth;
+        manager = GameObject.Find("GameManager").GetComponent<gameManager>();
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        healthSlider.value = (float)health / (float)maxHealth;
-        if (health <= 0)
-        {
-            dead = true;
-        }
+
 	}
+
+    public void DealDamage(int amt)
+    {
+        manager.DealDamage(amt);
+    }
 }
