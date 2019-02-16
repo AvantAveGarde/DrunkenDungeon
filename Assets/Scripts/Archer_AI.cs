@@ -34,21 +34,27 @@ public class Archer_AI :Enemy {
 			}
 			if(Vector3.Distance(transform.position, target.position) < attack_dist)
 			{
-				agent.enabled = false;
+				agent.destination = transform.position;
+				if(cur_cooldown <= 0f)
+				{
+					cur_cooldown = attack_cooldown;
+					transform.LookAt(player.transform);
+					Attack();
+				}
 			}
-			else
-			{
-				agent.enabled = true;
-			}
-			if(cur_cooldown <= 0f)
-			{
-				cur_cooldown = attack_cooldown;
-			}
+		}
+		if(cur_cooldown > 0f)
+		{
+			cur_cooldown -= Time.deltaTime;
 		}
 	}
 	private void Attack()
 	{
-		GameObject newWeapon = Instantiate(weapon, transform);
-		newWeapon.transform.localPosition = transform.position + transform.forward;
+		Vector3 attackPoint = transform.TransformPoint(0,0,1);
+		GameObject newWeapon = Instantiate(weapon, attackPoint, transform.rotation * Quaternion.Euler(90f,0f,0f));
+		//newWeapon.transform.rotation = transform.rotation;
+		//newWeapon.transform.LookAt(player.transform.position);
+		newWeapon.transform.localPosition = transform.localPosition + Vector3.Normalize(transform.forward) * 2;
+		newWeapon.GetComponent<Rigidbody>().velocity = transform.forward * 4f;
 	}
 }
