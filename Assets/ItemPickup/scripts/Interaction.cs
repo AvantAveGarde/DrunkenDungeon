@@ -6,16 +6,16 @@ public class Interaction : MonoBehaviour {
 
     //track this object's tag
     private string tag;
-    GameObject playerInfo;
     public int storedCoins = 1;
     public int storedKeys = 0;
     public Transform coinPrefab;
     public Transform keyPrefab;
+    private gameManager gm;
 
 	// Use this for initialization
 	void Start () {
         tag = gameObject.tag;
-        playerInfo = GameObject.Find("GameManager");
+        gm = GameObject.Find("GameManager").GetComponent<gameManager>(); ;
 	}
 
 
@@ -24,13 +24,22 @@ public class Interaction : MonoBehaviour {
         {
             case "door":
                 //open the door
-                Debug.Log("hello you bint");
+                if (gm.keyCount > 0)
+                {
+                    gm.keyCount--;
+                    Destroy(gameObject);
+                }
+                
                 break;
             case "key":
                 // pick up key
+                gm.keyCount++;
+                Destroy(gameObject);
                 break;
             case "coin":
                 //pick up coin
+                gm.coinCount++;
+                Destroy(gameObject);
                 break;
             case "chest":
                 //open chest
@@ -39,8 +48,7 @@ public class Interaction : MonoBehaviour {
                 SpewItems();
                 return;
         }
-        // delete it
-        Destroy(gameObject); 
+        
     }
 
     private void SpewItems()
