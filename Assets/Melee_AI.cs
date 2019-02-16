@@ -48,5 +48,6 @@ public class Melee_AI : MonoBehaviour {
     {
         GameObject newWeap = Instantiate(weapon, transform);
         newWeap.transform.localPosition = new Vector3(-1.2f, 0, .3f);
+        newWeap.GetComponent<sword_swing>().owner = gameObject;
     }
 }
