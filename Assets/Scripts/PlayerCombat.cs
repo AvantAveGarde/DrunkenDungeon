@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour {
     int damage = 20;
     public BoxCollider collisionBox;
-	// Use this for initialization
+	gameManager Manager; 
+    // Use this for initialization
 	void Start ()
     {
         collisionBox = GetComponent<BoxCollider>();
+        Manager = GameObject.Find("GameManager").GetComponent<gameManager>();
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,6 @@ public class PlayerCombat : MonoBehaviour {
 
     void DealDamage(GameObject enemy)
     {
-        Destroy(enemy);
+        enemy.GetComponent<Enemy>().DealDamage(damage);
     }
 }
