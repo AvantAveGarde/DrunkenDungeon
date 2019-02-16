@@ -7,6 +7,7 @@ public class sword_swing : MonoBehaviour {
     public GameObject owner;
     [SerializeField] private float swing_time;
     [SerializeField] private float swing_speed;
+    [SerializeField] private int damage;
 
 	// Use this for initialization
 	void Start () {
@@ -25,4 +26,12 @@ public class sword_swing : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<Player>().DealDamage(damage);
+        }
+    }
 }
