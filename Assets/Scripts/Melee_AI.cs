@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Melee_AI : MonoBehaviour {
+public class Melee_AI : Enemy {
     [SerializeField] private GameObject weapon;
     [SerializeField] private float attack_cd = 1.2f;
     [SerializeField] private float attack_dist = 1.8f;

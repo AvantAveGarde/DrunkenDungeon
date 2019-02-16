@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Archer_AI : MonoBehaviour {
+public class Archer_AI :Enemy {
 
 	private GameObject player;
 	public Transform target;
