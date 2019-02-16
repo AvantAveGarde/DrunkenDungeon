@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-	public int health = 2;
+	public int health = 100;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,9 +13,9 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void DealDamage()
+	public void DealDamage(int amt)
 	{
-		health--;
+		health -= amt;
 		if(health == 0)
 		{
 			//Instantiate an item,
