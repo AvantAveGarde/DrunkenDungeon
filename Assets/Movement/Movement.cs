@@ -38,6 +38,5 @@ public class Movement : MonoBehaviour {
         vRotation = Input.GetAxis("Mouse Y");
         transform.Rotate(-vRotation, 0f, 0f, Space.Self);
         transform.Rotate(0f, hRotation, 0f, Space.World);
-
     }
 }
