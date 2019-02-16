@@ -18,8 +18,9 @@ public class Enemy : MonoBehaviour {
 		health -= amt;
 		if(health == 0)
 		{
-			//Instantiate an item,
-			//then Destroy(this);
+            //Instantiate an item,
+            //then Destroy(this);
+            Destroy(this.gameObject);
 		}
 	}
 }

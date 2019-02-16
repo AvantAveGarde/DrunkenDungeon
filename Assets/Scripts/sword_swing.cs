@@ -16,7 +16,7 @@ public class sword_swing : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        transform.RotateAround(owner.transform.position, transform.up, swing_speed * Time.deltaTime);
+        transform.RotateAround(owner.transform.position, transform.up * -1, swing_speed * Time.deltaTime);
     }
     // Update is called once per frame
     void Update () {
@@ -27,11 +27,13 @@ public class sword_swing : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            other.GetComponent<Player>().DealDamage(damage);
+            GameObject player = other.gameObject.transform.parent.gameObject;
+            Player player_comp = player.GetComponent<Player>();
+            player_comp.DealDamage(damage);
         }
     }
 }

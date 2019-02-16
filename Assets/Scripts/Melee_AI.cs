@@ -47,7 +47,7 @@ public class Melee_AI : Enemy {
     private void Attack()
     {
         GameObject newWeap = Instantiate(weapon, transform);
-        newWeap.transform.localPosition = new Vector3(-1.2f, 0, .3f);
+        newWeap.transform.localPosition = new Vector3(.9f, 0, 0);
         newWeap.GetComponent<sword_swing>().owner = gameObject;
     }
 }

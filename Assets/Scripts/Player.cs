@@ -23,5 +23,6 @@ public class Player : MonoBehaviour {
     public void DealDamage(int amt)
     {
         manager.DealDamage(amt);
+        print(amt);
     }
 }
