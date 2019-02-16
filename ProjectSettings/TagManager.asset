@@ -8,6 +8,9 @@ TagManager:
   - chest
   - key
   - coin
+  - enemy
+  - PlayerAttack
+  - Enemy
   layers:
   - Default
   - TransparentFX
