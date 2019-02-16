@@ -15,8 +15,7 @@ public class Interaction : MonoBehaviour {
 	}
 
 
-    void doSomething() {
-        
+    public void DoSomething() {  
         switch (tag)
         {
             case "door":
