@@ -35,7 +35,32 @@ ModelImporter:
     4300004: pCylinder3
     4300006: pCylinder4
     4300008: pCylinder5
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder1Mat
+    second: {fileID: 2100000, guid: b636f2768113adf44815a63b7f5a877b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder2Mat
+    second: {fileID: 2100000, guid: 85eb3a567f18ab54fb053a79e56abead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder3Mat
+    second: {fileID: 2100000, guid: 6d7fecd45949ded49ad7b30a0728dacb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder4Mat
+    second: {fileID: 2100000, guid: b636f2768113adf44815a63b7f5a877b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder5Mat
+    second: {fileID: 2100000, guid: 6d7fecd45949ded49ad7b30a0728dacb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
